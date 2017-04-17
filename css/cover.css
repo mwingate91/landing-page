@@ -28,7 +28,8 @@ a:hover {
 html,
 body {
   height: 100%;
-  min-height:100%;
+  min-height:478px;
+  max-height: 100%;
   background:linear-gradient(180deg,rgba(0,0,0,0.9) 10%,rgba(0,0,0,.4)), url(../images/AstridBedroomCherry.jpg);
   background-size:cover;
 }
@@ -150,17 +151,29 @@ input {
     border: none;
 }
 
+input[type=text], input[type=submit] {
+  border-radius: 40px;
+}
+
 input[type=submit] {
   background-color: #C00;
   cursor: pointer;
   position:absolute;
   right: 0px;
   width:100px;
+  border-bottom-left-radius: 0;
+  text-align: center;
 }
 
-input[type=text], input[type=submit] {
-  border-radius: 40px;
+.clicked input[type=submit] {
+  -webkit-transition: background-color 300ms linear;
+  -moz-transition: background-color 300ms linear;
+  -o-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+  background-color: rgb(46,139,87);
 }
+
 
 input[type=text] {
   padding-right:100px;
@@ -191,6 +204,7 @@ input[type=text] {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    z-index: 100;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
